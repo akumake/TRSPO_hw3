@@ -1,13 +1,13 @@
 import multiprocessing as mp
 import time
 
-def colatz_steps(col_num: int):
+def colatz_steps(num: int):
     steps = 0
-    while col_num != 1:
-        if col_num % 2 == 0:
-            col_num = col_num // 2
+    while num != 1:
+        if num % 2 == 0:
+            num = num // 2
         else:
-            col_num = 3 * col_num + 1
+            num = 3 * num + 1
 
         steps += 1
 
