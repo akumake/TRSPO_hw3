@@ -16,14 +16,14 @@ def colatz_steps(col_num: int):
 if __name__ == '__main__':
     N = 1000000
     num_threads = 14
-    numbers = list(range(1, N+1))
+    numbers_list = list(range(1, N+1))
 
     pool = mp.Pool(num_threads)
 
-    results = pool.map(colatz_steps, numbers)
+    results = pool.map(colatz_steps, numbers_list)
 
     pool.close()
     pool.join()
 
-    average_steps = sum(results) / len(numbers)
+    average_steps = sum(results) / len(numbers_list)
     print(f'Середня кількість кроків: {average_steps}')
